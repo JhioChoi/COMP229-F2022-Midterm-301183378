@@ -117,7 +117,7 @@ router.post("/:id", (req, res, next) => {
 
 // delete part start
 // GET - process the delete by specific employeename
-router.get("/delete/employ/employee2", (req, res, next) => {
+router.get("/delete/employee2", (req, res, next) => {
   /*****************
    * ADD CODE HERE *
    *****************/
