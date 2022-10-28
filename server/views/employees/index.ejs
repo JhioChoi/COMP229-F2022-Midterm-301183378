@@ -1,0 +1,58 @@
+<% include ../partials/header.ejs %>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <h3>Employee Information</h3>
+      
+      <!--ADD BUTTON-->
+      <a href="/employees/add" class="btn btn-primary"
+        ><i class="fa fa-plus"></i> Add an employee</a
+      >
+      <br />
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Employee id</th>
+              <th class="text-center">Employee name</th>
+              <th class="text-center">Department</th>
+              <th class="text-center">Designation</th>
+              <th class="text-center">Salary</th>
+              <th class="text-center"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Template Row -->
+            <% for (let count = 0; count < employees.length; count++) { %>
+            <tr>
+              <td><%= employees[count].Employeeid %></td>
+              <td class="text-center"><%= employees[count].Employeename %></td>
+              <td class="text-center"><%= employees[count].Department %></td>
+              <td class="text-center"><%= employees[count].Designation %></td>
+              <td class="text-center"><%= employees[count].Salary %></td>
+              <td class="text-center">
+                <!--EDIT BUTTON-->
+                <a href="employees/<%= employees[count]._id %>" class="btn btn-primary">
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit an employee</a>
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+
+      <!--DELETE BUTTON-->
+      <a href="employees/delete/employee2" class="btn btn-warning btn-sm">
+        <i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+    </main>
+    
+      <div class="col-md-offset-1 col-md-10 text-center">
+        <ul class="pagination pagination-lg pager" id="myPager"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include ../partials/footer.ejs %>
